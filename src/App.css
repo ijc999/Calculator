@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+ }
+
+body {
+  background: blue;
+}
+
+.App {
+  display: grid;
+  grid-auto-rows: 539px;
+  padding: 1rem 0rem;
+}
+
+body {
+  background-color: #e5e5e5;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 100%;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .calculator {
+  height: 50vh;
+  width: 300px;
+  background-color: black;
+  border-radius: 0.5rem;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* global button style */
+button {
+  border: unset;
+  box-shadow: unset;
+  color: white;
+  cursor: pointer;
+}
+
+button.special,
+button.special.sign {
+  background-color: black;
+}
+
+/* calculator wrapper */
+.c-wrapper {
+  display: grid;
+  grid-auto-rows: 30% 15% 55%;
+  height: 100%;
+}
+
+.ctc {
+  padding: 0.5rem 1rem;
+}
+
+.c-type {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.c-type button {
+  padding: 0.5rem;
+  background-color: darkslategray;
+  font-size: 0.8rem;
+  font-weight: 400;
+  transition: all 0.5s linear;
+}
+
+.c-type button:active {
+  background-color: white;
+}
+
+.c-type button.active {
+  background-color: black;
+}
+
+.c-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: all 0.5s linear;
+}
+
+.c-history-answer {
+  background-color: darkslategray;
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.c-answer {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  color: white;
+  font-weight: 900;
+}
+
+.c-compute {
+  background-color: darkslategray;
+  padding: 0.4rem 1rem;
+  display: grid;
+  grid-template-columns: minmax(0px, 50px) repeat(2, 1fr);
+
+  font-size: 1.8rem;
+  font-weight: 300;
+  transition: all 0.5s linear;
+  overflow: hidden;
+}
+
+.c-compute span {
+  letter-spacing: 0.1rem;
+  color: white;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-y: scroll;
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.c-compute > button {
+  background-color: unset;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.c-compute span::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Action buttons */
+.c-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0.5rem 1rem;
+}
+
+.c-grid > button {
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.5s linear;
+  text-transform: uppercase;
+  background-color: darkslategray;
+  border: 3px solid black;
+}
+
+.c-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.c-grid > button.top-btn {
+  background-color: black;
+}
+
+.c-grid > button.normal {
+  background-color: blue;
+}
+
+.c-grid > button.special {
+  background-color: black;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+/* Larger Screen Size => 768px */
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: unset;
+    width: 750px;
+  }
+}
+
+.no-rv {
+  cursor: unset;
+}
